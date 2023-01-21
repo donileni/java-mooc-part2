@@ -1,7 +1,29 @@
 package dictionary;
 
 public class Main {
+
     public static void main(String[] args) {
         // You can test your dictionary here
+
+        SaveableDictionary dictionary = new SaveableDictionary("word.txt");
+        boolean wasSuccessful = dictionary.load();
+
+        if (wasSuccessful) {
+            System.out.println("Successfully loaded the dictionary from file");
+        }
+        
+        
+
+        System.out.println(dictionary.translate("apina"));
+        System.out.println(dictionary.translate("ohjelmointi"));
+        System.out.println(dictionary.translate("alla oleva"));
+        
+        dictionary.add("hej", "tjenari");
+        
+        boolean wasSuccessful2 = dictionary.save();
+        
+        if (wasSuccessful2) {
+            System.out.println("Great success!");
+        }
     }
 }

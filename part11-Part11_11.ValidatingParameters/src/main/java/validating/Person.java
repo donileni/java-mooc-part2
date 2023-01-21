@@ -6,9 +6,16 @@ public class Person {
     private int age;
 
     public Person(String name, int age) {
-
-        this.name = name;
+        
+        if ((name != null && name.length() <= 40) && (age >= 0 && age <= 120) && (!name.equals(""))){
+            this.name = name;
+            this.age = age;
+        } else {
+            throw new IllegalArgumentException("Name was invalid"); 
+        }
+        
         this.age = age;
+
     }
 
     public String getName() {

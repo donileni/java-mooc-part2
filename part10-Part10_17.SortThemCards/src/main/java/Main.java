@@ -12,5 +12,13 @@ public class Main {
         System.out.println(first);
         System.out.println(second);
         System.out.println(third);
+        
+        Hand hand = new Hand(); 
+        
+        hand.add(third);
+        hand.add(first);
+        hand.add(second);
+        
+        hand.print();
     }
 }
